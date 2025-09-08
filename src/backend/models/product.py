@@ -1,7 +1,5 @@
 from sqlalchemy import Column, Integer, String, Float, Text
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from backend.models.base import Base
 
 class Product(Base):
     __tablename__ = 'products'
