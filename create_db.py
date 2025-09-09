@@ -1,5 +1,5 @@
 import asyncio
-from backend.database import create_tables
+from core.database import create_tables
 from backend.models import *
 
 async def main():
