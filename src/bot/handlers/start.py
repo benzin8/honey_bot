@@ -13,4 +13,4 @@ async def cmd_start(message: Message):
     username = message.from_user.username
     
     await create_user(telegram_id, first_name, username)
-    await message.answer("Добро пожаловать в магазин меда! Выберете действие:", reply_markup=main_keyboard)
+    await message.answer("Добро пожаловать в магазин меда! Выберете действие:", reply_markup=main_keyboard())
