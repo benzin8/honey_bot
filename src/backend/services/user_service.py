@@ -11,7 +11,6 @@ async def create_user(telegram_id: int, name: str, username: str, phone: str = N
 
         if user:
             print(f"Пользователь {user.telegram_id} существует")
-            pass
         else:
             new_user = User(
                 telegram_id = telegram_id,
