@@ -4,9 +4,10 @@ from backend.models.base import Base
 class User(Base):
     __tablename__ = "users"
 
-    user_id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     telegram_id = Column(BigInteger, unique=True, nullable=False)
     name = Column(String(100), nullable=False)
+    username = Column(String(100), unique=True)
     phone = Column(String(12))
 
     def __repr__(self):
