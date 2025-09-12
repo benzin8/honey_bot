@@ -16,7 +16,6 @@ dp = Dispatcher()
 dp.include_router(start_router)
 dp.include_router(registration_router)
 
-
 async def main():
     logging.basicConfig(level=logging.INFO)
     await dp.start_polling(bot)
