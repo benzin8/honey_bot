@@ -10,7 +10,14 @@ async def create_user(telegram_id: int, name: str, username: str, phone: str = N
         user = result.scalar_one_or_none()
 
         if user:
-            print(f"Пользователь {user.telegram_id} существует")
+            if phone and user.phone != phone:
+                user.phone = phone
+            if name and user.name != name:
+                user.name = name
+            if username and user.username != username:
+                user.username = username
+            await session.commit()
+            return user
         else:
             new_user = User(
                 telegram_id = telegram_id,
