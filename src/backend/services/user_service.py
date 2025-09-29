@@ -30,7 +30,8 @@ async def create_user(telegram_id: int, name: str, username: str, phone: str = N
             user = User(
                 telegram_id = telegram_id,
                 name = name,
-                username = username
+                username = username,
+                phone = phone,
             )
             
             session.add(user)
